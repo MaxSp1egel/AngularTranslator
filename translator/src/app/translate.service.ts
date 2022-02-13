@@ -6,18 +6,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TranslateService {
-  private _url = 'https://translation.googleapis.com/language/translate/v2?key=';
   private _key = 'AIzaSyCceUiH6Q7wUT_5SPQJC0ADuuN5m_ecFNU';
   constructor(private _http: HttpClient) { }
 
-  translate(text: string, language: string) {
-    return this._http.post(this._url + this._key, {
+  translate(text: string, sourceLanguage: string, targetLanguage: string) {
+    var url: string = 'https://translation.googleapis.com/language/translate/v2?key=';
+    return this._http.post(url + this._key, {
       "q": [text],
-      "target": language
+      "source": sourceLanguage,
+      "target": targetLanguage
     });
   }
 
   getLanguages() {
-    return this._http.get(this._url + this._key);
+    var url: string = 'https://translation.googleapis.com/language/translate/v2/languages?key=';
+    return this._http.post(url + this._key, {
+      "target": "ru"
+    });
   }
 }
