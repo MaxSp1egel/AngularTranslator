@@ -1,6 +1,6 @@
 <div class="source-frame">
-  <textarea name="sourceText" cols="60" rows="1" [(ngModel)]="_sourceText"></textarea>
-  <div class="buttons">
-    <button name="translateButton" (click)="log()">Перевести</button>
-  </div> 
+  <textarea name="sourceText" cols="60" rows="1" [(ngModel)]="_sourceText" style="margin-right: 1%"></textarea>
+  <textarea name="translatedText" cols="60" rows="1" [(ngModel)]="_translatedText" style="margin-left: 1%"></textarea>
+  <br>
+  <button name="translateButton" (click)="log()">Перевести</button>
 </div>

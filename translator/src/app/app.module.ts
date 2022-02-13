@@ -14,7 +14,8 @@ import { SourceTextComponent } from './source-text/source-text.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

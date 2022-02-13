@@ -1,10 +1,18 @@
-.source-frame textarea {
-    resize: none;
-    height: 1em;
-    width: 40%;
-    transition: all 0.5s ease;
+.source-frame {
+    width: 80%;
+    padding-left: 10%;
 }
 
-.source-frame textarea:focus {
-  height: 20em;
+.source-frame textarea {
+    resize: none;
+    height: 20em;
+    width: 49%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.source-frame button {
+    width: 49%;
+    text-align: center;
 }
