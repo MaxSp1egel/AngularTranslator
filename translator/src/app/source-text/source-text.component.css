@@ -1,0 +1,10 @@
+.source-frame textarea {
+    resize: none;
+    height: 1em;
+    width: 40%;
+    transition: all 0.5s ease;
+}
+
+.source-frame textarea:focus {
+  height: 20em;
+}
