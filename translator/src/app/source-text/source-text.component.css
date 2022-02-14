@@ -1,18 +1,41 @@
 .source-frame {
     width: 80%;
-    padding-left: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 2px black;
+    margin-left: 8%;
+    margin-right: 8%;
+    border-radius: 5px;
+}
+
+.source-frame select {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .source-frame textarea {
+    border-radius: 5px;
     resize: none;
     height: 20em;
     width: 49%;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
 }
 
 .source-frame button {
+    border-radius: 5px;
+    background-color: crimson;
+    color: white;
     width: 49%;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border: thin;
 }

@@ -1,16 +1,17 @@
-<select style="margin-left: 10%" (change)="updateSourceLanguage($event)">
-  <option value="русский">{{_sourceLanguage.name}}</option>
-  <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
-</select>
-
-<select style="position: absolute; left: 50.5%" (change)="updateTargetLanguage($event)">
-  <option value="английский">{{_targetLanguage.name}}</option>
-  <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
-</select>
-
 <div class="source-frame">
-  <textarea name="sourceText" cols="60" rows="1" [(ngModel)]="_sourceText" style="margin-right: 1%"></textarea>
-  <textarea name="translatedText" cols="60" rows="1" [(ngModel)]="_translatedText" style="margin-left: 1%"></textarea>
+  <select (change)="updateSourceLanguage($event)">
+    <option value="{{_sourceLanguage.name}}">{{_sourceLanguage.name}}</option>
+    <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
+  </select>
+
+  <select style="position: absolute; left: 50.8%" (change)="updateTargetLanguage($event)">
+    <option value="{{_targetLanguage.name}}">{{_targetLanguage.name}}</option>
+    <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
+  </select>
   <br>
-  <button name="translateButton" (click)="translate()">Перевести</button>
+  <textarea name="sourceText" cols="60" rows="1" [(ngModel)]="_sourceText" style="margin-right: 1%"></textarea>
+  <textarea readonly name="translatedText" cols="60" rows="1" [(ngModel)]="_translatedText" style="margin-left: 1%"></textarea>
+  <br>
+  <button name="translateButton" (click)="translate()" style="margin-right: 1%">Перевести</button>
+  <button name="saveButton" style="margin-left: 1%">Сохранить</button>
 </div>

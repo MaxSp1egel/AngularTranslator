@@ -10,7 +10,7 @@ export class TranslateService {
   constructor(private _http: HttpClient) { }
 
   translate(text: string, sourceLanguage: string, targetLanguage: string) {
-    var url: string = 'https://translation.googleapis.com/language/translate/v2?key=';
+    const url: string = 'https://translation.googleapis.com/language/translate/v2?key=';
     return this._http.post(url + this._key, {
       "q": [text],
       "source": sourceLanguage,
@@ -19,7 +19,7 @@ export class TranslateService {
   }
 
   getLanguages() {
-    var url: string = 'https://translation.googleapis.com/language/translate/v2/languages?key=';
+    const url: string = 'https://translation.googleapis.com/language/translate/v2/languages?key=';
     return this._http.post(url + this._key, {
       "target": "ru"
     });
