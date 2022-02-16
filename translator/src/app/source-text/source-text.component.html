@@ -49,7 +49,7 @@
     Сохраненные переводы
     <div class="exist" *ngIf="_savedList.length" style="margin: 0px; padding: 0px; width: 100%; margin-top: 10px;">
       <div class="overlap" *ngIf="_savedList.length > 3; else fits" style="margin: 0px; padding: 0px; width: 100%;">
-        <div class="saved-list" style="height: 22em;">
+        <div class="saved-list" style="height: 21em;">
           <div class="save" *ngFor="let save of _savedList; let i = index">
             {{save.sourceLanguage.name}} &#8594; {{save.targetLanguage.name}}
             <button (click)="delete(i)">Удалить</button>

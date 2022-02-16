@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SaveService } from '../save.service';
 import { TranslateService } from '../translate.service';
 
 interface Language {
@@ -27,7 +28,7 @@ export class SourceTextComponent implements OnInit {
   _languageList: Array<Language> = [];
   _savedList: Array<Save> = [];
 
-  constructor(private _translateService: TranslateService) { }
+  constructor(private _translateService: TranslateService, private _saveService: SaveService) { }
 
   ngOnInit(): void {
     this._translateService.getLanguages().subscribe((response: any) => {
@@ -36,7 +37,7 @@ export class SourceTextComponent implements OnInit {
       }
     });
 
-    this._savedList = JSON.parse(localStorage.getItem('Texts')!);
+    this._savedList = this._saveService.get('Texts');
   }
 
   updateSourceLanguage(event: any) {
@@ -62,21 +63,13 @@ export class SourceTextComponent implements OnInit {
   }
 
   save() {
-    this._savedList = [{
-      sourceLanguage: this._sourceLanguage,
-      targetLanguage: this._targetLanguage,
-      sourceText: this._sourceText,
-      translatedText: this._translatedText
-    }, ...this._savedList];
-
-    localStorage.setItem('Texts', JSON.stringify(this._savedList));
+    this._saveService.add('Texts', this._sourceLanguage, this._targetLanguage, this._sourceText, this._translatedText);
+    this._savedList = this._saveService.get('Texts');
   }
 
   delete(i: number) {
-    this._savedList.splice(i, 1);
-
-    localStorage.clear();
-    localStorage.setItem('Texts', JSON.stringify(this._savedList));
+    this._saveService.remove('Texts', i);
+    this._savedList = this._saveService.get('Texts');
   }
 
   setActive() {
