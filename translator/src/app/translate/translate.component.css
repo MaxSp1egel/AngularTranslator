@@ -1,0 +1,192 @@
+.source-frame {
+    width: 80%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 2px black;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.source-frame select {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.source-frame textarea {
+    border-radius: 5px;
+    resize: none;
+    height: 20em;
+    width: 49%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.source-frame textarea {
+    text-align: left;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+}
+
+.source-frame button {
+    border-radius: 5px;
+    width: 49%;
+    border: thin;
+}
+
+.source-frame button {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: crimson;
+}
+
+.saved-list-button {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.saved-list-button button {
+    margin-left: 8%;
+    width: 84%;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: thin;
+}
+
+.saved-list-button button {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: crimson;
+}
+
+.new-translation-button {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.new-translation-button button {
+    margin-left: 8%;
+    width: 84%;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: groove;
+}
+
+.new-translation-button button {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+}
+
+.history-frame {
+    width: 80%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 2px black;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.history-frame {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: crimson;
+}
+
+.history-frame .exist {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.history-frame .overlap {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.history-frame .saved-list {
+    padding: 1%;
+    padding-bottom: 0px;
+    margin: 0px;
+    width: 98%;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.history-frame .save {
+    border-radius: 5px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.history-frame .save {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+}
+
+.history-frame textarea {
+    padding: 5px;
+    margin-bottom: 1%;
+    resize: none;
+    width: 49.5%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.history-frame textarea {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+}
+
+.history-frame button {
+    border-radius: 5px;
+    float: right;
+    border: thin;
+}
+.history-frame button {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: crimson;
+}

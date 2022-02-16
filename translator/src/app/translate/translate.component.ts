@@ -15,11 +15,11 @@ interface Save {
 }
 
 @Component({
-  selector: 'app-source-text',
-  templateUrl: './source-text.component.html',
-  styleUrls: ['./source-text.component.css']
+  selector: 'app-translate',
+  templateUrl: './translate.component.html',
+  styleUrls: ['./translate.component.css']
 })
-export class SourceTextComponent implements OnInit {
+export class TranslateComponent implements OnInit {
   _isActive = false;
   _sourceText: string = "";
   _translatedText: string = "";

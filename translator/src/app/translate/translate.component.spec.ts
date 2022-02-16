@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SourceTextComponent } from './source-text.component';
+import { SourceTextComponent } from './translate.component';
 
 describe('SourceTextComponent', () => {
   let component: SourceTextComponent;

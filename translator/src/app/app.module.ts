@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { SourceTextComponent } from './source-text/source-text.component';
+import { TranslateComponent } from './translate/translate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SourceTextComponent
+    TranslateComponent
   ],
   imports: [
     BrowserModule,
