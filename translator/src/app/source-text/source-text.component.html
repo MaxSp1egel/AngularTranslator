@@ -1,17 +1,76 @@
-<div class="source-frame">
-  <select (change)="updateSourceLanguage($event)">
-    <option value="{{_sourceLanguage.name}}">{{_sourceLanguage.name}}</option>
-    <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
-  </select>
+<div class="active" *ngIf="_isActive; else inactive">
+  <div class="source-frame">
+    <select (change)="updateSourceLanguage($event)">
+      <option value="{{_sourceLanguage.name}}">{{_sourceLanguage.name}}</option>
+      <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
+    </select>
 
-  <select style="position: absolute; left: 50.8%" (change)="updateTargetLanguage($event)">
-    <option value="{{_targetLanguage.name}}">{{_targetLanguage.name}}</option>
-    <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
-  </select>
-  <br>
-  <textarea name="sourceText" cols="60" rows="1" [(ngModel)]="_sourceText" style="margin-right: 1%"></textarea>
-  <textarea readonly name="translatedText" cols="60" rows="1" [(ngModel)]="_translatedText" style="margin-left: 1%"></textarea>
-  <br>
-  <button name="translateButton" (click)="translate()" style="margin-right: 1%">Перевести</button>
-  <button name="saveButton" style="margin-left: 1%">Сохранить</button>
+    <select style="position: absolute; left: 50.8%" (change)="updateTargetLanguage($event)">
+      <option value="{{_targetLanguage.name}}">{{_targetLanguage.name}}</option>
+      <option *ngFor="let language of _languageList" [value]="language.name">{{language.name}}</option>
+    </select>
+    <br />
+    <textarea name="sourceText" cols="60" rows="1" [(ngModel)]="_sourceText" style="margin-right: 1%"></textarea>
+    <textarea readonly name="translatedText" cols="60" rows="1" [(ngModel)]="_translatedText" style="margin-left: 1%"></textarea>
+    <br />
+    <button [disabled]="!this._sourceText.length" (click)="translate()" style="margin-right: 1%">Перевести</button>
+    <button [disabled]="!this._translatedText.length" (click)="save()" style="margin-left: 1%">Сохранить</button>
+  </div>
+
+  <button style="margin-left: 8%;
+          width: 84%;
+          color: white;
+          background-color: crimson;
+          border-radius: 5px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border: thin;" (click)="setActive()">
+    Сохраненные переводы
+  </button>
 </div>
+
+<ng-template #inactive>
+  <button style="margin-left: 8%;
+          width: 84%;
+          color: black;
+          background-color: white;
+          border-radius: 5px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border: groove;" (click)="setActive()">
+    Перевести новый текст
+  </button>
+
+  <div class="history-frame">
+    Сохраненные переводы
+    <div class="exist" *ngIf="_savedList.length" style="margin: 0px; padding: 0px; width: 100%; margin-top: 10px;">
+      <div class="overlap" *ngIf="_savedList.length > 3; else fits" style="margin: 0px; padding: 0px; width: 100%;">
+        <div class="saved-list" style="height: 22em;">
+          <div class="save" *ngFor="let save of _savedList; let i = index">
+            {{save.sourceLanguage.name}} &#8594; {{save.targetLanguage.name}}
+            <button (click)="delete(i)">Удалить</button>
+            <hr />
+            <textarea readonly rows="3" style="margin-right: 0.5%;">{{save.sourceText}}</textarea>
+            <textarea readonly rows="3" style="margin-left: 0.5%;">{{save.translatedText}}</textarea>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #fits style="margin: 0px; padding: 0px; width: 100%;">
+        <div class="saved-list">
+          <div class="save" *ngFor="let save of _savedList; let i = index">
+            {{save.sourceLanguage.name}} &#8594; {{save.targetLanguage.name}}
+            <button (click)="delete(i)">Удалить</button>
+            <hr />
+            <textarea readonly rows="3" style="margin-right: 0.5%;">{{save.sourceText}}</textarea>
+            <textarea readonly rows="3" style="margin-left: 0.5%;">{{save.translatedText}}</textarea>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</ng-template>
